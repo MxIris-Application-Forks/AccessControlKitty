@@ -64,6 +64,14 @@
 					<key>XCSourceEditorCommandClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).AccessControlCommand</string>
 					<key>XCSourceEditorCommandIdentifier</key>
+					<string>$(PRODUCT_BUNDLE_IDENTIFIER).Remove</string>
+					<key>XCSourceEditorCommandName</key>
+					<string>Remove Access Levels</string>
+				</dict>
+				<dict>
+					<key>XCSourceEditorCommandClassName</key>
+					<string>$(PRODUCT_MODULE_NAME).AccessControlCommand</string>
+					<key>XCSourceEditorCommandIdentifier</key>
 					<string>$(PRODUCT_BUNDLE_IDENTIFIER).MakePublic</string>
 					<key>XCSourceEditorCommandName</key>
 					<string>All public</string>
@@ -96,9 +104,17 @@
 					<key>XCSourceEditorCommandClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).AccessControlCommand</string>
 					<key>XCSourceEditorCommandIdentifier</key>
-					<string>$(PRODUCT_BUNDLE_IDENTIFIER).Remove</string>
+					<string>$(PRODUCT_BUNDLE_IDENTIFIER).MakeOpen</string>
 					<key>XCSourceEditorCommandName</key>
-					<string>Remove Access Levels</string>
+					<string>All open</string>
+				</dict>
+				<dict>
+					<key>XCSourceEditorCommandClassName</key>
+					<string>$(PRODUCT_MODULE_NAME).AccessControlCommand</string>
+					<key>XCSourceEditorCommandIdentifier</key>
+					<string>$(PRODUCT_BUNDLE_IDENTIFIER).MakePackage</string>
+					<key>XCSourceEditorCommandName</key>
+					<string>All package</string>
 				</dict>
 			</array>
 			<key>XCSourceEditorExtensionPrincipalClass</key>

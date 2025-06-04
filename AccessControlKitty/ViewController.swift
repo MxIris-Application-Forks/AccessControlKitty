@@ -19,7 +19,7 @@ class ViewController: NSViewController {
     }
     
     @IBAction func openExtensions(_ sender: Any) {
-        let url = URL(string: "x-apple.systempreferences:com.apple.preferences")!
+        guard let url = URL(string: "x-apple.systempreferences:com.apple.ExtensionsPreferences") else { return }
         NSWorkspace.shared.open(url)
     }
     

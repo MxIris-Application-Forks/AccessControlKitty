@@ -23,6 +23,7 @@ public enum Access: String {
     case `fileprivate` = "fileprivate"
     case remove = ""
     case `open` = "open"
+    case package = "package"
 }
 
 extension Access: Comparable {
@@ -39,6 +40,7 @@ extension Access: Comparable {
         case .remove: return 0
         case .public: return 1
         case .open: return 2
+        case .package: return 3
         }
     }
 }

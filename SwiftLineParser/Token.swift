@@ -35,7 +35,7 @@ enum Keyword: String, CaseIterable {
     `prefix`, `postfix`, `infix`,
     `lazy`, `weak`,
     privateset = "private(set)", fileprivateset = "fileprivate(set)", internalset = "internal(set)",
-    `operator`
+    `operator`, `package`
     
 }
 
@@ -43,7 +43,7 @@ let operatorFixKeywords: [Keyword] = [.prefix, .infix, .postfix]
 let nonAccessModifiableKeywords: [Keyword] = [.case, .for, .while, .repeat, .do, .catch, .defer]
 let localScopeKeywords: [Keyword] = [.func, ._init, .for, .while, .repeat, .protocol, .do, .catch, .defer, .subscript]
 let structureKeywords: [Keyword] = [ .protocol, .class, .struct, .enum, .extension, .func, ._init, .var, .let, .for, .while, .repeat, .do, .catch, .defer, .subscript]
-let accessKeywords: [Keyword] = [.public, .private, .fileprivate, .internal, .open]
+let accessKeywords: [Keyword] = [.public, .private, .fileprivate, .internal, .open, .package]
 let postfixableFunctionKeywords: [Keyword] = [.static, .unowned, .unownedsafe, .unownedunsafe, .required, .convenience]
 let setterAccessKeywords: [Keyword] = [.privateset, .fileprivateset, .internalset]
 
@@ -100,7 +100,7 @@ extension Array where Element == Token {
     }
     
     var containExtensionWithConformance: Bool {
-        guard let startIndex = self.index(of: Token.keyword(.extension)) else { return false }
+        guard let startIndex = self.firstIndex(of: Token.keyword(.extension)) else { return false }
         var remainingTokens = self.dropFirst(startIndex + 1)
         guard self.count >= 3 else { return false }
         let first = remainingTokens.removeFirst()

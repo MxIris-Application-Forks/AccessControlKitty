@@ -57,7 +57,7 @@ public class Parser {
         
         case .makeAPI:
             switch currentLevel {
-            case nil, .internal: return (line, line.substitution(target: .public), .public)
+            case .internal: return (line, line.substitution(target: .public), .public)
             default: return noSubstitution
             }
         
@@ -70,7 +70,7 @@ public class Parser {
         case .increaseAccess:
             switch currentLevel {
             case .public: return noSubstitution
-            case .internal, nil: return (line, line.substitution(target: .public), .public)
+            case .internal: return (line, line.substitution(target: .public), .public)
             case .fileprivate: return (line, line.substitution(target: .internal), .internal)
             case .private: return (line, line.substitution(target: .internal), .internal)
             default: fatalError()
@@ -79,7 +79,7 @@ public class Parser {
         case .decreaseAccess:
             switch currentLevel {
             case .public: return (line, internalString, .internal)
-            case .internal, nil: return (line, line.substitution(target: .private), .private)
+            case .internal: return (line, line.substitution(target: .private), .private)
             case .fileprivate: return (line, line.substitution(target: .private), .private)
             case .private: return noSubstitution
             default: fatalError()

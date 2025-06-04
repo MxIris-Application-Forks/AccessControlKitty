@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E984C2E52DDA0D3A005B9CED /* SwiftSyntax in Frameworks */ = {isa = PBXBuildFile; productRef = E984C2E42DDA0D3A005B9CED /* SwiftSyntax */; };
+		E9CD12672B78E5A900E86FC6 /* XcodeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDE6D9572218405F002AF4BB /* XcodeKit.framework */; };
+		E9CD12682B78E5A900E86FC6 /* XcodeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EDE6D9572218405F002AF4BB /* XcodeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ED0062C22208E6FB00FC48B2 /* SwiftLineParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED18F827209488C1002BD062 /* SwiftLineParser.framework */; };
 		ED03E642220610D100957094 /* Structure.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED03E641220610D100957094 /* Structure.swift */; };
 		ED03E644220BB24500957094 /* Access.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED03E643220BB24500957094 /* Access.swift */; };
@@ -15,7 +18,7 @@
 		ED18F7FF2094886B002BD062 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED18F7FE2094886B002BD062 /* AppDelegate.swift */; };
 		ED18F8012094886C002BD062 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED18F8002094886C002BD062 /* Assets.xcassets */; };
 		ED18F8132094889C002BD062 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED18F8122094889C002BD062 /* Cocoa.framework */; };
-		ED18F81D2094889C002BD062 /* AccessControlKittyExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = ED18F8102094889C002BD062 /* AccessControlKittyExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		ED18F81D2094889C002BD062 /* AccessControlKittyExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = ED18F8102094889C002BD062 /* AccessControlKittyExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		ED18F82B209488C1002BD062 /* SwiftLineParser.h in Headers */ = {isa = PBXBuildFile; fileRef = ED18F829209488C1002BD062 /* SwiftLineParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ED18F82E209488C1002BD062 /* SwiftLineParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED18F827209488C1002BD062 /* SwiftLineParser.framework */; };
 		ED18F82F209488C1002BD062 /* SwiftLineParser.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED18F827209488C1002BD062 /* SwiftLineParser.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -77,15 +80,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		ED18F8212094889C002BD062 /* Embed App Extensions */ = {
+		E9CD12692B78E5A900E86FC6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E9CD12682B78E5A900E86FC6 /* XcodeKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED18F8212094889C002BD062 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				ED18F81D2094889C002BD062 /* AccessControlKittyExtension.appex in Embed App Extensions */,
+				ED18F81D2094889C002BD062 /* AccessControlKittyExtension.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		ED18F833209488C1002BD062 /* Embed Frameworks */ = {
@@ -152,8 +166,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9CD12672B78E5A900E86FC6 /* XcodeKit.framework in Frameworks */,
 				ED0062C22208E6FB00FC48B2 /* SwiftLineParser.framework in Frameworks */,
 				ED18F8132094889C002BD062 /* Cocoa.framework in Frameworks */,
+				E984C2E52DDA0D3A005B9CED /* SwiftSyntax in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,7 +317,7 @@
 				ED18F7F72094886B002BD062 /* Sources */,
 				ED18F7F82094886B002BD062 /* Frameworks */,
 				ED18F7F92094886B002BD062 /* Resources */,
-				ED18F8212094889C002BD062 /* Embed App Extensions */,
+				ED18F8212094889C002BD062 /* Embed Foundation Extensions */,
 				ED18F833209488C1002BD062 /* Embed Frameworks */,
 			);
 			buildRules = (
@@ -322,6 +338,7 @@
 				ED18F80C2094889C002BD062 /* Sources */,
 				ED18F80D2094889C002BD062 /* Frameworks */,
 				ED18F80E2094889C002BD062 /* Resources */,
+				E9CD12692B78E5A900E86FC6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -393,21 +410,22 @@
 		ED18F7F32094886B002BD062 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1520;
 				ORGANIZATIONNAME = "Hot Beverage";
 				TargetAttributes = {
 					ED18F7FA2094886B002BD062 = {
 						CreatedOnToolsVersion = 9.3;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = "";
 					};
 					ED18F80F2094889C002BD062 = {
 						CreatedOnToolsVersion = 9.3;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = "";
 					};
 					ED18F826209488C1002BD062 = {
 						CreatedOnToolsVersion = 9.3;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = "";
 					};
 					ED18F837209488D5002BD062 = {
 						CreatedOnToolsVersion = 9.3;
@@ -415,6 +433,7 @@
 					};
 					EDE6D94822183992002AF4BB = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = "";
 						TestTargetID = ED18F7FA2094886B002BD062;
 					};
 				};
@@ -428,6 +447,9 @@
 				Base,
 			);
 			mainGroup = ED18F7F22094886B002BD062;
+			packageReferences = (
+				E984C2E32DDA0D3A005B9CED /* XCRemoteSwiftPackageReference "swift-syntax" */,
+			);
 			productRefGroup = ED18F7FC2094886B002BD062 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -604,6 +626,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -613,9 +636,11 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 9;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -636,6 +661,7 @@
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -666,6 +692,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -675,9 +702,11 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 9;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -691,6 +720,7 @@
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
@@ -701,19 +731,24 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = AccessControlKitty/AccessControlKitty.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 9KT5BGB8MA;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = D5Q73692VW;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = AccessControlKitty/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hotbeverage.accesscontrolkitty;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JH.accesscontrolkitty;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -723,19 +758,24 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = AccessControlKitty/AccessControlKitty.entitlements;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 9KT5BGB8MA;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = D5Q73692VW;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = AccessControlKitty/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hotbeverage.accesscontrolkitty;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JH.accesscontrolkitty;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -743,20 +783,24 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = AccessControlKittyExtension/AccessControlKittyExtension.entitlements;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 9KT5BGB8MA;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = D5Q73692VW;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = AccessControlKittyExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hotbeverage.accesscontrolkitty.extension;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JH.accesscontrolkitty.extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -764,21 +808,24 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = AccessControlKittyExtension/AccessControlKittyExtension.entitlements;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 9KT5BGB8MA;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = D5Q73692VW;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = AccessControlKittyExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hotbeverage.accesscontrolkitty.extension;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JH.accesscontrolkitty.extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -787,15 +834,17 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 9;
+				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 9KT5BGB8MA;
+				DEVELOPMENT_TEAM = D5Q73692VW;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 9;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = SwiftLineParser/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -804,12 +853,15 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hotbeverage.SwiftLineParser;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++14";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JH.accesscontrolkitty.SwiftLineParser;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -821,14 +873,16 @@
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 9;
+				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = D5Q73692VW;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 9;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = SwiftLineParser/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -837,11 +891,14 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hotbeverage.SwiftLineParser;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++14";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JH.accesscontrolkitty.SwiftLineParser;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -853,6 +910,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 9KT5BGB8MA;
 				INFOPLIST_FILE = SwiftLineParserTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -860,10 +918,11 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_BUNDLE_IDENTIFIER = hotbeverage.SwiftLineParserTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -874,6 +933,7 @@
 				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 9KT5BGB8MA;
 				INFOPLIST_FILE = SwiftLineParserTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -881,10 +941,11 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_BUNDLE_IDENTIFIER = hotbeverage.SwiftLineParserTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -895,6 +956,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 9KT5BGB8MA;
 				FRAMEWORK_SEARCH_PATHS = "${DEVELOPER_FRAMEWORKS_DIR}";
 				INFOPLIST_FILE = AccessControlKittyTests/Info.plist;
@@ -904,12 +966,13 @@
 					"@loader_path/../Frameworks",
 					"${DEVELOPER_FRAMEWORKS_DIR}",
 				);
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hotbeverage.AccessControlKittyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				SYSTEM_FRAMEWORK_SEARCH_PATHS = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AccessControlKitty.app/Contents/MacOS/AccessControlKitty";
 			};
@@ -922,6 +985,7 @@
 				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 9KT5BGB8MA;
 				FRAMEWORK_SEARCH_PATHS = "${DEVELOPER_FRAMEWORKS_DIR}";
 				INFOPLIST_FILE = AccessControlKittyTests/Info.plist;
@@ -931,11 +995,12 @@
 					"@loader_path/../Frameworks",
 					"${DEVELOPER_FRAMEWORKS_DIR}",
 				);
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hotbeverage.AccessControlKittyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				SYSTEM_FRAMEWORK_SEARCH_PATHS = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AccessControlKitty.app/Contents/MacOS/AccessControlKitty";
 			};
@@ -999,6 +1064,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E984C2E32DDA0D3A005B9CED /* XCRemoteSwiftPackageReference "swift-syntax" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/swiftlang/swift-syntax";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 601.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E984C2E42DDA0D3A005B9CED /* SwiftSyntax */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E984C2E32DDA0D3A005B9CED /* XCRemoteSwiftPackageReference "swift-syntax" */;
+			productName = SwiftSyntax;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ED18F7F32094886B002BD062 /* Project object */;
 }
