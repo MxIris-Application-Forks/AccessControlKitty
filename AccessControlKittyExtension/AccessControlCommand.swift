@@ -1,11 +1,3 @@
-//
-//  AccessControlCommand.swift
-//  Change Access Level
-//
-//  Created by Zoe Smith on 4/25/18.
-//  Copyright © 2018-9 Zoë Smith. Distributed under the MIT License.
-//
-
 import Foundation
 import XcodeKit
 import SwiftLineParser
@@ -95,4 +87,28 @@ extension AccessChange {
             "Remove": .singleLevel(.remove),
         ]
     }
+}
+
+let identifierPrefix: String = Bundle.main.bundleIdentifier ?? ""
+
+protocol SourceEditorCommand: NSObject {
+    var commandClassName: String { get }
+    var identifier: String { get }
+    var name: String { get }
+}
+
+extension SourceEditorCommand {
+    var commandClassName: String { Self.className() }
+    var identifier: String { commandClassName }
+
+    func makeCommandDefinition() -> [XCSourceEditorCommandDefinitionKey: Any] {
+        [.classNameKey: commandClassName,
+         .identifierKey: identifierPrefix + identifier,
+         .nameKey: name]
+    }
+}
+
+func makeCommandDefinition(_ command: SourceEditorCommand)
+    -> [XCSourceEditorCommandDefinitionKey: Any] {
+    command.makeCommandDefinition()
 }

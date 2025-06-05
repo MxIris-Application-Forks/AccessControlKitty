@@ -9,10 +9,12 @@
 /* Begin PBXBuildFile section */
 		E9CD12672B78E5A900E86FC6 /* XcodeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDE6D9572218405F002AF4BB /* XcodeKit.framework */; };
 		E9CD12682B78E5A900E86FC6 /* XcodeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EDE6D9572218405F002AF4BB /* XcodeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E9E285A22DF1F452003D501C /* SourceRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E285A12DF1F452003D501C /* SourceRange.swift */; };
+		E9E285A32DF1F697003D501C /* SwiftLineParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED18F827209488C1002BD062 /* SwiftLineParser.framework */; };
+		E9E285A42DF1F697003D501C /* SwiftLineParser.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED18F827209488C1002BD062 /* SwiftLineParser.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E9EBAA342DF12FC900EDFBF6 /* SwiftSyntax in Frameworks */ = {isa = PBXBuildFile; productRef = E9EBAA332DF12FC900EDFBF6 /* SwiftSyntax */; };
 		E9EBAA362DF12FE800EDFBF6 /* SwiftParser in Frameworks */ = {isa = PBXBuildFile; productRef = E9EBAA352DF12FE800EDFBF6 /* SwiftParser */; };
 		E9EBAA382DF1307300EDFBF6 /* AccessControlRewriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EBAA372DF1307300EDFBF6 /* AccessControlRewriter.swift */; };
-		ED0062C22208E6FB00FC48B2 /* SwiftLineParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED18F827209488C1002BD062 /* SwiftLineParser.framework */; };
 		ED03E644220BB24500957094 /* Access.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED03E643220BB24500957094 /* Access.swift */; };
 		ED18F7FF2094886B002BD062 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED18F7FE2094886B002BD062 /* AppDelegate.swift */; };
 		ED18F8012094886C002BD062 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED18F8002094886C002BD062 /* Assets.xcassets */; };
@@ -70,6 +72,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				E9CD12682B78E5A900E86FC6 /* XcodeKit.framework in Embed Frameworks */,
+				E9E285A42DF1F697003D501C /* SwiftLineParser.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,6 +91,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E9E285A12DF1F452003D501C /* SourceRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceRange.swift; sourceTree = "<group>"; };
 		E9EBAA372DF1307300EDFBF6 /* AccessControlRewriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessControlRewriter.swift; sourceTree = "<group>"; };
 		ED03E643220BB24500957094 /* Access.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Access.swift; sourceTree = "<group>"; };
 		ED18F7FB2094886B002BD062 /* AccessControlKitty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AccessControlKitty.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,8 +133,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9CD12672B78E5A900E86FC6 /* XcodeKit.framework in Frameworks */,
-				ED0062C22208E6FB00FC48B2 /* SwiftLineParser.framework in Frameworks */,
 				ED18F8132094889C002BD062 /* Cocoa.framework in Frameworks */,
+				E9E285A32DF1F697003D501C /* SwiftLineParser.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				ED18F829209488C1002BD062 /* SwiftLineParser.h */,
+				E9E285A12DF1F452003D501C /* SourceRange.swift */,
 				ED03E643220BB24500957094 /* Access.swift */,
 				ED18F84C2094890C002BD062 /* Core.swift */,
 				E9EBAA372DF1307300EDFBF6 /* AccessControlRewriter.swift */,
@@ -480,6 +485,7 @@
 			files = (
 				E9EBAA382DF1307300EDFBF6 /* AccessControlRewriter.swift in Sources */,
 				ED03E644220BB24500957094 /* Access.swift in Sources */,
+				E9E285A22DF1F452003D501C /* SourceRange.swift in Sources */,
 				ED18F8542094890D002BD062 /* Core.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

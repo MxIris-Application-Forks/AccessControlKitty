@@ -2024,11 +2024,27 @@ class ParserTests: XCTestCase {
         let source = SwiftParser.Parser.parse(
             source:
             """
-                func at(_ index: Int) -> Element? {
-                    return self.indices.contains(index) ? self[index] : nil
+            func tokenise(_ word: Word) throws -> [Token] {
+                let s = word.rawValue
+                if !insideMultilineComment, let token = Token(SingleCharacter.init(rawValue: s)) ?? Token(Keyword.init(rawValue: s)) {
+                    return [token]
+                } else {
+                    return try readByCharacters(word)
+                }
+            }
 
+            func readByCharacters(_ word: Word) throws -> [Token] {
+                var tokens: [Token] = []
             """
         )
-        print(AccessControlRewriter(accessChange: .singleLevel(.public)).rewrite(source).description)
+        let lines = AccessControlRewriter(accessChange: .singleLevel(.public)).rewrite(source).description.split(separator: "\n", omittingEmptySubsequences: false)
+        for line in lines {
+            print(line)
+        }
+//        let lines = source.description.split(separator: "\n").map { String($0) }
+//        let newLines = Core(lines: lines).newLines(at: (0..<lines.count).map { $0 }, accessChange: .singleLevel(.public))
+//        newLines.forEach { (key: Int, value: String) in
+//            print(key, value)
+//        }
     }
 }
