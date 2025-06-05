@@ -47,8 +47,8 @@ class AccessControlCommand: NSObject, XCSourceEditorCommand {
             throw AccessControlError.noSelection
         }
 
-        let parser = Parser(lines: lines)
-        let changedSelections = parser.newLines(at: Array(selectedLineNumbers), accessChange: access)
+        let core = Core(lines: lines)
+        let changedSelections = core.newLines(at: Array(selectedLineNumbers), accessChange: access)
         for lineNumber in selectedLineNumbers {
             if let line = changedSelections[lineNumber] {
                 buffer.lines[lineNumber] = line

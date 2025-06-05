@@ -1,12 +1,5 @@
-//
-//  Access.swift
-//  SwiftLineParser
-//
-//  Created by Zoe Smith on 6/2/19.
-//  Copyright © 2018-9 Zoë Smith. Distributed under the MIT License.
-//
-
 import Foundation
+import SwiftSyntax
 
 public enum AccessChange {
     case singleLevel(Access)
@@ -17,21 +10,44 @@ public enum AccessChange {
 }
 
 public enum Access: String {
-    case `public` = "public"
-    case `private` = "private"
-    case `internal` = "internal"
-    case `fileprivate` = "fileprivate"
+    case `public`
+    case `private`
+    case `internal`
+    case `fileprivate`
     case remove = ""
-    case `open` = "open"
-    case package = "package"
+    case open
+    case package
+    
+    
+    static var allKeywords: [Keyword] {
+        [.public, .private, .internal, .fileprivate, .open, .package]
+    }
+    
+    var keyword: Keyword? {
+        switch self {
+        case .public:
+            return .public
+        case .private:
+            return .private
+        case .internal:
+            return .internal
+        case .fileprivate:
+            return .fileprivate
+        case .remove:
+            return nil
+        case .open:
+            return .open
+        case .package:
+            return .package
+        }
+    }
 }
 
 extension Access: Comparable {
-    
-    public static func <(_ lhs: Access, _ rhs: Access) -> Bool {
+    public static func < (_ lhs: Access, _ rhs: Access) -> Bool {
         return lhs.order < rhs.order
     }
-    
+
     var order: Int {
         switch self {
         case .private: return -2
@@ -41,35 +57,6 @@ extension Access: Comparable {
         case .public: return 1
         case .open: return 2
         case .package: return 3
-        }
-    }
-}
-
-extension Access {
-    init?(_ keyword: Keyword?) {
-        guard let keyword = keyword else {
-            return nil
-        }
-        
-        if let a = Access.init(rawValue: keyword.rawValue) {
-            self = a
-        } else if keyword ==  .privateset { self = .private }
-        else if keyword == .fileprivateset { self = .fileprivate }
-        else if keyword == .internalset { self = .internal }
-        else { return nil }
-    }
-}
-
-extension Access {
-    var setterString: String? {
-        switch self {
-        case .private:
-            return Keyword.privateset.rawValue
-        case .internal:
-            return Keyword.internalset.rawValue
-        case .fileprivate:
-            return Keyword.fileprivateset.rawValue
-        default: return nil
         }
     }
 }
